@@ -1,0 +1,5 @@
+Result: Succeeded
+Bytes: 97880032
+Seconds: 30.5877679
+Errors: 0
+Unity: 6000.4.0a2

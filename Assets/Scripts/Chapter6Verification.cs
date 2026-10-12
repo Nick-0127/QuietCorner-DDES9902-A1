@@ -37,10 +37,14 @@ public class Chapter6Verification : MonoBehaviour
         yield return Frames();
         var ray=rig.GetComponentsInChildren<Chapter6XRRay>().First(r=>r.leftHand==left);
         Check(ray.hovered==target,"Controller ray reaches "+action+(left?" (left hand)":" (right hand)"));
+        var bridge=target.GetComponent<EZPZQuietCornerBridge>();
+        Check(ray.hoveredEZPZ==target.GetComponent<InteractableGeneral>() && bridge!=null,"EZPZ event layer present for "+action);
+        int eventBefore=bridge.activationCount;
         int before=ray.interactionCount;
         if(left)sim.leftTrigger=true;else sim.rightTrigger=true;
         yield return Frames();
         Check(ray.interactionCount==before+1,"Trigger invokes "+action+" exactly once");
+        Check(bridge.activationCount==eventBefore+1,"EZPZ primary event routes "+action+" exactly once");
         if(left)sim.leftTrigger=false;else sim.rightTrigger=false;
         yield return Frames();
     }

@@ -1,0 +1,8 @@
+16s: trigger light | warm=False sound=False guide=False position=(0.00, 0.05, -6.30)
+28s: trigger light | warm=True sound=False guide=False position=(0.00, 0.05, -6.30)
+42s: trigger sound | warm=True sound=True guide=False position=(0.00, 0.05, -6.30)
+52s: trigger pause | warm=True sound=True guide=True position=(0.00, 0.05, -6.30)
+106s: trigger pause | warm=True sound=True guide=True position=(0.00, 0.05, -6.30)
+112s: trigger stop | warm=True sound=False guide=False position=(0.00, 0.05, -6.30)
+120s: trigger teleport | warm=True sound=False guide=False position=(-3.60, 0.05, -3.80)
+136s: trigger reset | warm=True sound=False guide=False position=(-3.60, 0.66, -3.80)

@@ -1,0 +1,45 @@
+PASS: Three simulated XR devices are registered
+PASS: Simulation mode active; no hardware session required
+PASS: HMD position drives camera (simulated 6-DoF)
+PASS: HMD rotation drives camera
+PASS: Left controller position follows XR input
+PASS: Controller ray reaches light (right hand)
+PASS: EZPZ event layer present for light
+PASS: Trigger invokes light exactly once
+PASS: EZPZ primary event routes light exactly once
+PASS: XR trigger switches light to cool
+PASS: Controller ray reaches light (left hand)
+PASS: EZPZ event layer present for light
+PASS: Trigger invokes light exactly once
+PASS: EZPZ primary event routes light exactly once
+PASS: Left-hand trigger switches light back to warm
+PASS: Controller ray reaches sound (right hand)
+PASS: EZPZ event layer present for sound
+PASS: Trigger invokes sound exactly once
+PASS: EZPZ primary event routes sound exactly once
+PASS: XR trigger starts ambient sound
+PASS: Controller ray reaches pause (right hand)
+PASS: EZPZ event layer present for pause
+PASS: Trigger invokes pause exactly once
+PASS: EZPZ primary event routes pause exactly once
+PASS: XR trigger starts visual guide
+PASS: Visual guide advances with time
+PASS: Controller ray reaches stop (right hand)
+PASS: EZPZ event layer present for stop
+PASS: Trigger invokes stop exactly once
+PASS: EZPZ primary event routes stop exactly once
+PASS: Stop control ends guide and sound
+PASS: Controller ray reaches reset (right hand)
+PASS: EZPZ event layer present for reset
+PASS: Trigger invokes reset exactly once
+PASS: EZPZ primary event routes reset exactly once
+PASS: Reset restores initial state
+PASS: Controller ray reaches teleport (right hand)
+PASS: EZPZ event layer present for teleport
+PASS: Trigger invokes teleport exactly once
+PASS: EZPZ primary event routes teleport exactly once
+PASS: XR trigger teleports the player
+PASS: No Unity errors or exceptions during interaction checks
+ENVIRONMENT: No native OpenXR runtime is installed. Native plugin startup may log XR_ERROR_RUNTIME_UNAVAILABLE; simulated input checks do not validate an OpenXR session.
+NOT TESTED: Physical headset, Quest Link, native OpenXR runtime, stereo rendering and real tracking.
+Unity 6000.4.0a2 | Scene QuietCorner_Chapter6_Simulation
