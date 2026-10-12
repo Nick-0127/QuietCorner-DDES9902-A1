@@ -78,10 +78,4 @@ public class Chapter6XRPlayer : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        var style = new GUIStyle(GUI.skin.box) { fontSize = 16, alignment = TextAnchor.MiddleLeft, padding = new RectOffset(16,16,10,10) };
-        GUI.Box(new Rect(16,16,Mathf.Min(720,Screen.width-32),82), sessionStatus +
-            (IsSimulation ? "\nWASD move   |   Right mouse look   |   Left click controller ray\nQ / E snap turn   |   Esc stop sound and guide" : "\nLeft stick move   |   Right stick snap turn   |   Trigger interact"),style);
-    }
 }

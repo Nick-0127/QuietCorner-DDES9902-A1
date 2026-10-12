@@ -169,8 +169,8 @@ public class QuietCornerController : MonoBehaviour
     {
         switch (action)
         {
-            case "light": warm = !warm; lightStatus.text = (warm ? "WARM LIGHT" : "COOL LIGHT") + "\nClick to switch"; break;
-            case "sound": soundOn = !soundOn; if(soundOn && !ambience.isPlaying) ambience.Play(); soundStatus.text = (soundOn ? "SOUND ON" : "SOUND OFF") + "\nClick to toggle"; break;
+            case "light": warm = !warm; lightStatus.text = (warm ? "WARM LIGHT" : "COOL LIGHT") + "\nSelect to switch"; break;
+            case "sound": soundOn = !soundOn; if(soundOn && !ambience.isPlaying) ambience.Play(); soundStatus.text = (soundOn ? "SOUND ON" : "SOUND OFF") + "\nSelect to toggle"; break;
             case "pause":
                 if(guideRunning) StopGuide();
                 else { guideRunning=true; guideTime=0; completedCycles=0; pauseStatus.text="STOP PAUSE\nYou can stop at any time"; }
@@ -200,13 +200,13 @@ public class QuietCornerController : MonoBehaviour
     public void StopExperience()
     {
         StopGuide(); soundOn=false; ambience.Stop(); ambience.volume=0;
-        soundStatus.text="SOUND OFF\nClick to toggle";
+        soundStatus.text="SOUND OFF\nSelect to toggle";
         Cursor.lockState=CursorLockMode.None; Cursor.visible=true;
     }
 
     public void ResetExperience()
     {
-        StopExperience(); warm=true; lightStatus.text="WARM LIGHT\nClick to switch";
+        StopExperience(); warm=true; lightStatus.text="WARM LIGHT\nSelect to switch";
         // Reset never forces the user's position or view direction.
     }
 
