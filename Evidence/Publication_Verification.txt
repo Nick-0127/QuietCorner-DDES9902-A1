@@ -1,0 +1,9 @@
+Published and verified on 12 October 2026.
+Repository: https://github.com/Nick-0127/QuietCorner-DDES9902-A1
+GitHub Pages: https://nick-0127.github.io/QuietCorner-DDES9902-A1/
+Source: main branch, /docs folder. GitHub settings visibly confirmed 'Your site is live'.
+Public WebGL was opened in the Codex in-app browser. Actual scene loaded.
+Mouse selected the LIGHT control; screenshot confirms COOL LIGHT and changed environmental colour.
+The browser's captured error/warning log returned zero entries during the public-page check.
+Public_WebGL_Light_Selected.png and GitHub_Pages_Live.png retain actual UI evidence.
+This is a browser functional smoke test, not a real-headset or human usability trial.

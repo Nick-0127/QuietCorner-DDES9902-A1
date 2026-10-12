@@ -1,5 +1,7 @@
 # Quiet Corner - DDES9902 A1
 
+Publication verified 12 October 2026: the public WebGL scene loaded and mouse selection changed LIGHT to cool. See `Evidence/Publication_Verification.txt` and saved public-page screenshots. Physical headset and human usability tests remain unperformed.
+
 By Nick Li. A greybox prototype for a brief, self-directed pause between study sessions.
 Built on the previous Quiet Corner / Chapter 6 project, using Unity 6000.4.0a2.
 
