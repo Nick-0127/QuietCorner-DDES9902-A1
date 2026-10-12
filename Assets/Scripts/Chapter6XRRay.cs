@@ -8,6 +8,7 @@ public class Chapter6XRRay : MonoBehaviour
     public QuietCornerController experience;
     public LineRenderer line;
     public QuietCornerTarget hovered;
+    public InteractableGeneral hoveredEZPZ;
     public int interactionCount;
     InputAction trigger;
     Color idle;
@@ -23,16 +24,23 @@ public class Chapter6XRRay : MonoBehaviour
     void Update()
     {
         hovered = null;
+        hoveredEZPZ = null;
         Vector3 end = transform.position + transform.forward * 12;
         if (Physics.Raycast(transform.position, transform.forward, out var hit, 25, ~0, QueryTriggerInteraction.Ignore))
         {
             end = hit.point;
             hovered = hit.collider.GetComponentInParent<QuietCornerTarget>();
+            hoveredEZPZ = hit.collider.GetComponentInParent<InteractableGeneral>();
         }
         line.SetPosition(0,transform.position);
         line.SetPosition(1,end);
-        line.startColor = line.endColor = hovered != null ? Color.green : idle;
-        if (hovered != null && trigger.WasPressedThisFrame())
+        line.startColor = line.endColor = (hovered != null || hoveredEZPZ != null) ? Color.green : idle;
+        if (hoveredEZPZ != null && trigger.WasPressedThisFrame())
+        {
+            hoveredEZPZ.onPrimaryInteract.Invoke();
+            interactionCount++;
+        }
+        else if (hovered != null && trigger.WasPressedThisFrame())
         {
             experience.Activate(hovered.action,hovered.destination);
             interactionCount++;
