@@ -10,6 +10,7 @@ Dates below describe retained local implementation and verification records. The
 - Cleared the music envelope when stopping to preserve immediate silence.
 - Windows runtime verification passed 24 checks. Windows and WebGL builds succeeded with zero build errors. Actual Unity-generated audio was exported and measured.
 - Replaced the existing Unity Play game build. The public scene loaded; independent participant evaluation of this final audio change remains outstanding.
+- Restored retained published ZIP contents to three independent GitHub Pages URLs for assessment comparison. Original files are byte-for-byte preserved. This is a 25 November archive restoration, not a historical rebuild; exact respondent-build association was not logged by the forms.
 
 ## 24 November 2026
 

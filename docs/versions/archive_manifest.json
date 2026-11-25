@@ -1,0 +1,298 @@
+{
+  "archive_restored_on": "2026-11-25",
+  "method": "Original retained ZIP entries extracted without modifying file contents; no historical rebuild.",
+  "association_limit": "Each archive is a retained published build preceding its corresponding survey round. The forms did not record build hashes or immutable version URLs, so the exact build used by each respondent cannot be independently confirmed.",
+  "versions": [
+    {
+      "round": "test1",
+      "url": "https://nick-0127.github.io/QuietCorner-DDES9902-A1/versions/test1/",
+      "original_zip": "QuietCorner_UnityPlay.zip",
+      "zip_sha256": "DA2865CC9757EBCAEEA1980AEDB5AC2C98E661659AC459227CBDF992FD96DEB8",
+      "recorded_original_publication_date": "2026-11-03",
+      "publication_record_local_path": "outputs/UnityPlay_Publication_Status.txt",
+      "survey_round_response_date": "2026-11-06",
+      "description": "First shared prototype; hidden controller beams and original desktop controls.",
+      "files": [
+        {
+          "path": "Build/A1_WebGL.data",
+          "bytes": 8721462,
+          "sha256": "5DA48F9BCF1520FF572DA045123C35EE09289747E7818EAD76C5D8553C83FB72"
+        },
+        {
+          "path": "Build/A1_WebGL.framework.js",
+          "bytes": 459786,
+          "sha256": "439AE987B356D56A47A6AFC07D64682BA8B6A010B0593026530200C89A55A9AE"
+        },
+        {
+          "path": "Build/A1_WebGL.loader.js",
+          "bytes": 26964,
+          "sha256": "FEEB3578DFFCE0DE9005AC4A669D65BF5E4149D96516DCDAB2E691C3D5777ABC"
+        },
+        {
+          "path": "Build/A1_WebGL.wasm",
+          "bytes": 39483928,
+          "sha256": "2B163E9A46BD6F64E5E3014AAA9C997CDB5C6204A546CF5D939BC2601F6DC384"
+        },
+        {
+          "path": "index.html",
+          "bytes": 5619,
+          "sha256": "77DD8A8CC719010FE0EA2479F39DE4DBA340CB2A5EFFB85A557293A3ECF99563"
+        },
+        {
+          "path": "TemplateData/favicon.ico",
+          "bytes": 2305,
+          "sha256": "9C13BEB90EE8F70580D52A21D5233970D1C89E71E4A34A462C22610941C3C77F"
+        },
+        {
+          "path": "TemplateData/fullscreen-button.png",
+          "bytes": 175,
+          "sha256": "21221581673A54B8139D408D4A3F8D2B879E86827D4B6FC53B995FF7A99EE3E9"
+        },
+        {
+          "path": "TemplateData/MemoryProfiler.png",
+          "bytes": 665,
+          "sha256": "0CE87BE20D0C24AB6CB73B57DE2004DA261CC2A641E69319C6AE3FE11FC85483"
+        },
+        {
+          "path": "TemplateData/progress-bar-empty-dark.png",
+          "bytes": 96,
+          "sha256": "BBEE7131AFE8A3365906240D89184DC86234C119467F390BC4BC6802328FDB4D"
+        },
+        {
+          "path": "TemplateData/progress-bar-empty-light.png",
+          "bytes": 109,
+          "sha256": "143696C060AD43D6C30F19FF5F49000927A139A2A1E4C9F45FAFAA2B90D7D2BE"
+        },
+        {
+          "path": "TemplateData/progress-bar-full-dark.png",
+          "bytes": 74,
+          "sha256": "3306A6244DCB3926FCA38A28E3CED589DF8FF1BEED955EB17C0BBF01C918BC62"
+        },
+        {
+          "path": "TemplateData/progress-bar-full-light.png",
+          "bytes": 84,
+          "sha256": "12395EA785480C5CDF12FADE6E6CBF49666D5BB1CEF7240C113DBCBA6BDC5C87"
+        },
+        {
+          "path": "TemplateData/style.css",
+          "bytes": 1448,
+          "sha256": "8E3625E108A61DCD1D31303376D9E02D7BDC08921D254E8F4359B892B3825CAA"
+        },
+        {
+          "path": "TemplateData/unity-logo-dark.png",
+          "bytes": 3042,
+          "sha256": "C1B72D26C096487DABC948B54BC203F8DAC7ED4E3F5733918798E858ACB4B159"
+        },
+        {
+          "path": "TemplateData/unity-logo-light.png",
+          "bytes": 3077,
+          "sha256": "002990AEA0D946833CADC1519D5B7E50A4570BD537A0517DD79A59D3EEC84DA7"
+        },
+        {
+          "path": "TemplateData/unity-logo-title-footer.png",
+          "bytes": 1151,
+          "sha256": "9E8B3BDB67C2446D16362FE59449D892100931DBBADFE6A9D923A4142B57A79F"
+        },
+        {
+          "path": "TemplateData/webmemd-icon.png",
+          "bytes": 1670,
+          "sha256": "C56F5494640CEDDA273AAD38D58E6AB9DA625D5B3F4D875C0FF92C6192A569C2"
+        }
+      ]
+    },
+    {
+      "round": "test2",
+      "url": "https://nick-0127.github.io/QuietCorner-DDES9902-A1/versions/test2/",
+      "original_zip": "QuietCorner_UnityPlay_HiddenCursor.zip",
+      "zip_sha256": "565BD1B07C254C88EE8C0600B4404FE1AA689E11F0413643912AD271025A43DC",
+      "recorded_original_publication_date": "2026-11-10",
+      "publication_record_local_path": "outputs/HiddenCursor_2026-11-10/Evidence/Verification.txt",
+      "survey_round_response_date": "2026-11-16",
+      "description": "Hidden-cursor revision V5; the retained implementation includes its historical edge-follow fallback.",
+      "files": [
+        {
+          "path": "Build/WebGL.data",
+          "bytes": 8731666,
+          "sha256": "2B4EDDACCB437438E8FA75342695EFDC35940D12B592D1272DE8C204E9E12906"
+        },
+        {
+          "path": "Build/WebGL.framework.js",
+          "bytes": 463640,
+          "sha256": "15072CEC4929B27C926378F698068259F290C86709EAC4FC5C4B777039F7A1DA"
+        },
+        {
+          "path": "Build/WebGL.loader.js",
+          "bytes": 26964,
+          "sha256": "5E9C1B9E53701A8DD3AAC53AAE2B120DCCBD77C3F5F0D7FA8E569B2953550F77"
+        },
+        {
+          "path": "Build/WebGL.wasm",
+          "bytes": 39513836,
+          "sha256": "FB14B5F5144F212B00C361B65F8C0F17B8A241D04BC593FE8B21BDB4A019ADC9"
+        },
+        {
+          "path": "TemplateData/favicon.ico",
+          "bytes": 2305,
+          "sha256": "9C13BEB90EE8F70580D52A21D5233970D1C89E71E4A34A462C22610941C3C77F"
+        },
+        {
+          "path": "TemplateData/fullscreen-button.png",
+          "bytes": 175,
+          "sha256": "21221581673A54B8139D408D4A3F8D2B879E86827D4B6FC53B995FF7A99EE3E9"
+        },
+        {
+          "path": "TemplateData/MemoryProfiler.png",
+          "bytes": 665,
+          "sha256": "0CE87BE20D0C24AB6CB73B57DE2004DA261CC2A641E69319C6AE3FE11FC85483"
+        },
+        {
+          "path": "TemplateData/progress-bar-empty-dark.png",
+          "bytes": 96,
+          "sha256": "BBEE7131AFE8A3365906240D89184DC86234C119467F390BC4BC6802328FDB4D"
+        },
+        {
+          "path": "TemplateData/progress-bar-empty-light.png",
+          "bytes": 109,
+          "sha256": "143696C060AD43D6C30F19FF5F49000927A139A2A1E4C9F45FAFAA2B90D7D2BE"
+        },
+        {
+          "path": "TemplateData/progress-bar-full-dark.png",
+          "bytes": 74,
+          "sha256": "3306A6244DCB3926FCA38A28E3CED589DF8FF1BEED955EB17C0BBF01C918BC62"
+        },
+        {
+          "path": "TemplateData/progress-bar-full-light.png",
+          "bytes": 84,
+          "sha256": "12395EA785480C5CDF12FADE6E6CBF49666D5BB1CEF7240C113DBCBA6BDC5C87"
+        },
+        {
+          "path": "TemplateData/style.css",
+          "bytes": 1448,
+          "sha256": "8E3625E108A61DCD1D31303376D9E02D7BDC08921D254E8F4359B892B3825CAA"
+        },
+        {
+          "path": "TemplateData/unity-logo-dark.png",
+          "bytes": 3042,
+          "sha256": "C1B72D26C096487DABC948B54BC203F8DAC7ED4E3F5733918798E858ACB4B159"
+        },
+        {
+          "path": "TemplateData/unity-logo-light.png",
+          "bytes": 3077,
+          "sha256": "002990AEA0D946833CADC1519D5B7E50A4570BD537A0517DD79A59D3EEC84DA7"
+        },
+        {
+          "path": "TemplateData/unity-logo-title-footer.png",
+          "bytes": 1151,
+          "sha256": "9E8B3BDB67C2446D16362FE59449D892100931DBBADFE6A9D923A4142B57A79F"
+        },
+        {
+          "path": "TemplateData/webmemd-icon.png",
+          "bytes": 1670,
+          "sha256": "C56F5494640CEDDA273AAD38D58E6AB9DA625D5B3F4D875C0FF92C6192A569C2"
+        },
+        {
+          "path": "index.html",
+          "bytes": 5592,
+          "sha256": "000105CB8B7C0AD19838EA3B2EB0DC431CAE204E749D103162A166E7E23C2119"
+        }
+      ]
+    },
+    {
+      "round": "test3",
+      "url": "https://nick-0127.github.io/QuietCorner-DDES9902-A1/versions/test3/",
+      "original_zip": "QuietCorner_Camera360_UnityPlay_2026-11-24.zip",
+      "zip_sha256": "B9C2E03F94A16759E0E160485B64AC086B60B8101884342E765D32513C28A06B",
+      "recorded_original_publication_date": "2026-11-24",
+      "publication_record_local_path": "outputs/Camera360Fix_2026-11-24/UnityPlay_Publication.txt",
+      "survey_round_response_date": "2026-11-25",
+      "description": "Camera recenter revision V12 with seating, drinks and the music implementation before the 25 November audio revision.",
+      "files": [
+        {
+          "path": "Build/WebGL.data",
+          "bytes": 8860255,
+          "sha256": "5BF2C6DD1F7E326DCFCCA60F9AA57987DA28DCFB8F6AE59A85E5E734EBD03F77"
+        },
+        {
+          "path": "Build/WebGL.framework.js",
+          "bytes": 464991,
+          "sha256": "9F7B5FA52E59B18CAA4568B2E74CF6430F5ABA874A9037C2867FE9D1153E80A1"
+        },
+        {
+          "path": "Build/WebGL.loader.js",
+          "bytes": 26964,
+          "sha256": "5231A3F054AB63D4C2E4D7F7B96142CE30E8B77ED2E48C10C980BF814D071CB3"
+        },
+        {
+          "path": "Build/WebGL.wasm",
+          "bytes": 39552165,
+          "sha256": "1FDC4136FF1CD0667B067DDB0B9BB7CE6749D2D9E80B8038A500EC1CE74F4787"
+        },
+        {
+          "path": "index.html",
+          "bytes": 5592,
+          "sha256": "000105CB8B7C0AD19838EA3B2EB0DC431CAE204E749D103162A166E7E23C2119"
+        },
+        {
+          "path": "TemplateData/favicon.ico",
+          "bytes": 2305,
+          "sha256": "9C13BEB90EE8F70580D52A21D5233970D1C89E71E4A34A462C22610941C3C77F"
+        },
+        {
+          "path": "TemplateData/fullscreen-button.png",
+          "bytes": 175,
+          "sha256": "21221581673A54B8139D408D4A3F8D2B879E86827D4B6FC53B995FF7A99EE3E9"
+        },
+        {
+          "path": "TemplateData/MemoryProfiler.png",
+          "bytes": 665,
+          "sha256": "0CE87BE20D0C24AB6CB73B57DE2004DA261CC2A641E69319C6AE3FE11FC85483"
+        },
+        {
+          "path": "TemplateData/progress-bar-empty-dark.png",
+          "bytes": 96,
+          "sha256": "BBEE7131AFE8A3365906240D89184DC86234C119467F390BC4BC6802328FDB4D"
+        },
+        {
+          "path": "TemplateData/progress-bar-empty-light.png",
+          "bytes": 109,
+          "sha256": "143696C060AD43D6C30F19FF5F49000927A139A2A1E4C9F45FAFAA2B90D7D2BE"
+        },
+        {
+          "path": "TemplateData/progress-bar-full-dark.png",
+          "bytes": 74,
+          "sha256": "3306A6244DCB3926FCA38A28E3CED589DF8FF1BEED955EB17C0BBF01C918BC62"
+        },
+        {
+          "path": "TemplateData/progress-bar-full-light.png",
+          "bytes": 84,
+          "sha256": "12395EA785480C5CDF12FADE6E6CBF49666D5BB1CEF7240C113DBCBA6BDC5C87"
+        },
+        {
+          "path": "TemplateData/style.css",
+          "bytes": 1448,
+          "sha256": "8E3625E108A61DCD1D31303376D9E02D7BDC08921D254E8F4359B892B3825CAA"
+        },
+        {
+          "path": "TemplateData/unity-logo-dark.png",
+          "bytes": 3042,
+          "sha256": "C1B72D26C096487DABC948B54BC203F8DAC7ED4E3F5733918798E858ACB4B159"
+        },
+        {
+          "path": "TemplateData/unity-logo-light.png",
+          "bytes": 3077,
+          "sha256": "002990AEA0D946833CADC1519D5B7E50A4570BD537A0517DD79A59D3EEC84DA7"
+        },
+        {
+          "path": "TemplateData/unity-logo-title-footer.png",
+          "bytes": 1151,
+          "sha256": "9E8B3BDB67C2446D16362FE59449D892100931DBBADFE6A9D923A4142B57A79F"
+        },
+        {
+          "path": "TemplateData/webmemd-icon.png",
+          "bytes": 1670,
+          "sha256": "C56F5494640CEDDA273AAD38D58E6AB9DA625D5B3F4D875C0FF92C6192A569C2"
+        }
+      ]
+    }
+  ]
+}

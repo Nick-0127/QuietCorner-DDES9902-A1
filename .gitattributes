@@ -1,0 +1,2 @@
+# Preserve the retained historical WebGL builds byte for byte.
+docs/versions/test*/** -text
