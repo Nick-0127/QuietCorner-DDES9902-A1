@@ -70,8 +70,8 @@ public static class Chapter6Setup
         foreach (var text in Object.FindObjectsByType<TextMesh>(FindObjectsSortMode.None))
         {
             if (text.text.StartsWith("DDES9902")) text.text="CHAPTER 6   /   OPENXR   /   QUIET CORNER";
-            if (text.text.StartsWith("W A S D")) text.text="NO HEADSET: SIMULATION\nW A S D   Move\nRight mouse   Look\nLeft click   Controller trigger\nQ / E   Snap turn\n\nHEADSET: OPENXR SCENE\nLeft stick   Move\nRight stick   Snap turn";
-            if (text.text.StartsWith("Click a labelled control")) text.text="Point a controller ray\nat a labelled control.\nPress the trigger to select.\n\nLIGHT   Warm / cool\nSOUND   On / off\nPAUSE   Start / stop guide\n\nFloor pads   Teleport\nSTOP   Sound + guide";
+            if (text.text.StartsWith("W A S D")) text.text="NO HEADSET: SIMULATION\nWASD / arrows   Move\nRight mouse   Look\nLeft click   Select\nF   Sit / stand | Q / E   Turn\n\nHEADSET: OPENXR SCENE\nLeft stick   Move\nRight stick   Snap turn";
+            if (text.text.StartsWith("Click a labelled control")) text.text="Point a controller ray\nat a labelled control.\nPress the trigger to select.\n\nLIGHT   Warm / cool\nMUSIC   Matches the light\nGUIDED BREAK   Start / stop\n\nFloor pads   Teleport\nSTOP   Music + guide";
         }
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),HeadsetScene);
         simulator.enabled=true;
@@ -136,6 +136,7 @@ public static class Chapter6Setup
         AssetDatabase.CreateAsset(material,"Assets/Chapter6/Materials/"+(isLeft ? "Left" : "Right")+" Controller.mat");
         visual.GetComponent<Renderer>().sharedMaterial=material;
         var line=hand.AddComponent<LineRenderer>();
+        line.enabled=false; // Hide the beam while keeping controller ray interactions active.
         line.positionCount=2; line.useWorldSpace=true; line.startWidth=.004f; line.endWidth=.008f;
         var rayMaterial=AssetDatabase.LoadAssetAtPath<Material>("Assets/Chapter6/Materials/Controller Ray.mat");
         if(rayMaterial==null){rayMaterial=new Material(Shader.Find("Sprites/Default"));AssetDatabase.CreateAsset(rayMaterial,"Assets/Chapter6/Materials/Controller Ray.mat");}

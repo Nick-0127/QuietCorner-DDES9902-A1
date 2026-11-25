@@ -1,0 +1,40 @@
+{
+  "Baseline_Warm": {
+    "clip_rms": 0.06509037891858406,
+    "clip_peak": 0.18640705587939085,
+    "output_rms_at_normal_volume": 0.02213072883231858,
+    "output_dbfs_rms": -33.10008566393832,
+    "power_weighted_frequency_hz": 187.3470823750611,
+    "energy_above_400_hz_percent": 6.361599755551663e-05,
+    "loop_seam_step": 0.0
+  },
+  "Baseline_Cool": {
+    "clip_rms": 0.06509280429548486,
+    "clip_peak": 0.18591875972777488,
+    "output_rms_at_normal_volume": 0.022131553460464855,
+    "output_dbfs_rms": -33.09976201912379,
+    "power_weighted_frequency_hz": 128.59198075047217,
+    "energy_above_400_hz_percent": 2.9652634055949715e-05,
+    "loop_seam_step": 0.0
+  },
+  "Audio_Warm": {
+    "clip_rms": 0.10998768806257661,
+    "clip_peak": 0.34742271187475204,
+    "output_rms_at_normal_volume": 0.054993844031288305,
+    "output_dbfs_rms": -25.19371844752299,
+    "power_weighted_frequency_hz": 181.10652984515107,
+    "energy_above_400_hz_percent": 0.036032094469035415,
+    "loop_seam_step": 0.0,
+    "gain_vs_previous_db": 7.906367216415333
+  },
+  "Audio_Cool": {
+    "clip_rms": 0.10998770894350979,
+    "clip_peak": 0.3923154393139439,
+    "output_rms_at_normal_volume": 0.054993854471754894,
+    "output_dbfs_rms": -25.193716798525113,
+    "power_weighted_frequency_hz": 363.53589358862223,
+    "energy_above_400_hz_percent": 16.514520663048824,
+    "loop_seam_step": 0.0,
+    "gain_vs_previous_db": 7.906045220598674
+  }
+}

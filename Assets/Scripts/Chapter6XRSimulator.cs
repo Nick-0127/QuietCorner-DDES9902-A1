@@ -32,29 +32,45 @@ public class Chapter6XRSimulator : MonoBehaviour
         InputSystem.onBeforeUpdate += BeforeInput;
     }
 
-    void BeforeInput()
+    void Update()
     {
-        if (InputState.currentUpdateType != InputUpdateType.Dynamic) return;
+        // Mouse delta is available AFTER the Input System has processed events.
+        // onBeforeUpdate runs too early: delta controls have just been reset.
+        // Feed these poses into the simulated devices on the next input update.
         if (!automated && Mouse.current != null)
         {
             var mouse = Mouse.current;
-            if (mouse.rightButton.isPressed)
+            bool looking = mouse.rightButton.isPressed;
+            if (looking)
             {
-                Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false;
                 var delta = mouse.delta.ReadValue();
                 yaw += delta.x * .12f; pitch = Mathf.Clamp(pitch - delta.y * .12f,-75,75);
             }
-            else { Cursor.lockState = CursorLockMode.None; Cursor.visible = true; }
+            // Right-drag works in embedded WebGL players without pointer-lock permission.
+            Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
             headRotation = Quaternion.Euler(pitch,yaw,0);
             leftPosition = headPosition + headRotation * new Vector3(-.25f,-.4f,.35f);
             rightPosition = headPosition + headRotation * new Vector3(.25f,-.4f,.35f);
             leftRotation = headRotation;
-            Vector2 pointer = mouse.rightButton.isPressed ? new Vector2(Screen.width*.5f,Screen.height*.5f) : mouse.position.ReadValue();
+            Vector2 pointer = mouse.position.ReadValue();
             Ray ray = headCamera.ScreenPointToRay(pointer);
             Vector3 point = Physics.Raycast(ray,out var hit,30,~0,QueryTriggerInteraction.Ignore) ? hit.point : ray.GetPoint(12);
             rightRotation = Quaternion.LookRotation(trackingSpace.InverseTransformPoint(point) - rightPosition,Vector3.up);
-            rightTrigger = mouse.leftButton.isPressed;
+            rightTrigger = !looking && mouse.leftButton.isPressed;
         }
+    }
+
+    public void SetHeadPose(Vector3 position, Quaternion rotation)
+    {
+        headPosition = position;
+        headRotation = rotation;
+        yaw = Mathf.DeltaAngle(0, rotation.eulerAngles.y);
+        pitch = Mathf.DeltaAngle(0, rotation.eulerAngles.x);
+    }
+
+    void BeforeInput()
+    {
+        if (InputState.currentUpdateType != InputUpdateType.Dynamic) return;
         var state = new XRSimulatedHMDState
         {
             isTracked = true, trackingState = 3, devicePosition = headPosition, deviceRotation = headRotation,

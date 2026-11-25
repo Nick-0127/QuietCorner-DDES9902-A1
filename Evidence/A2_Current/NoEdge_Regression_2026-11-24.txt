@@ -1,0 +1,15 @@
+PASS: First click enters look mode without selecting
+PASS: Moving toward the right edge still rotates
+PASS: Stationary at the right edge never rotates
+PASS: Moving toward the left edge still rotates
+PASS: Stationary at the left edge never rotates
+PASS: Moving toward the top edge still rotates
+PASS: Stationary at the top edge never rotates
+PASS: Moving toward the bottom edge still rotates
+PASS: Stationary at the bottom edge never rotates
+PASS: Further click selects exactly once
+PASS: Captured mouse preserves relative horizontal and vertical look
+PASS: Captured mouse stops immediately after movement
+PASS: Escape releases and clears input
+PASS: Losing focus releases input
+14/14 checks passed

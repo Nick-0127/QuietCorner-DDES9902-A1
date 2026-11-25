@@ -42,7 +42,7 @@ public class Chapter6XRRay : MonoBehaviour
         }
         else if (hovered != null && trigger.WasPressedThisFrame())
         {
-            experience.Activate(hovered.action,hovered.destination);
+            experience.Activate(hovered.action,hovered.destination,hovered);
             interactionCount++;
         }
     }

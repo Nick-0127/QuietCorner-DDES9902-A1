@@ -1,100 +1,99 @@
-# Quiet Corner - DDES9902 A1
+# Quiet Corner
 
-Publication verified 12 October 2026: the public WebGL scene loaded and mouse selection changed LIGHT to cool. See `Evidence/Publication_Verification.txt` and saved public-page screenshots. Physical headset and human usability tests remain unperformed.
+DDES9902 Assessment 2 prototype by Nick Li, z5745451. Current source revision: 25 November 2026.
 
-By Nick Li. A greybox prototype for a brief, self-directed pause between study sessions.
-Built on the previous Quiet Corner / Chapter 6 project, using Unity 6000.4.0a2.
+Quiet Corner is a small interactive room for a self-directed break between study sessions. Visitors can change the lighting and music, try an optional guided break, sit at a sofa or table, and use a water/tea dispenser. It is an exploratory design prototype and makes no therapeutic or productivity claims.
 
-## Play
+## Play the current version
 
-The published WebGL preview is hosted with GitHub Pages:
-https://Nick-0127.github.io/QuietCorner-DDES9902-A1/
+[Quiet Corner on Unity Play](https://play.unity.com/en/games/cb6480bf-c6c9-478d-bd55-268582bd716d/quiet-corner)
 
-The browser version is keyboard/mouse XR simulation, not WebXR headset support.
-Wait for the scene to load, then click in the scene. Use a recent desktop browser.
+Use a desktop browser with a keyboard and mouse. This is a browser simulation of a 3D environment; it does not provide WebXR headset support. The current music revision was uploaded to this existing game on 25 November 2026.
 
-- WASD: move slowly.
-- Hold right mouse button and move mouse: look around.
-- Point with the mouse and left-click a labelled control or a floor destination.
-- Q / E: snap turn by 30 degrees.
-- Esc: immediately stop sound and the optional guide, and release the cursor.
+The `docs/` directory and [GitHub Pages preview](https://Nick-0127.github.io/QuietCorner-DDES9902-A1/) retain the historical A1 build. They are not the current A2 experience. Use Unity Play for current testing.
 
-LIGHT is beside the left lantern; SOUND is beside the right garden; PAUSE is in
-front of the orb. The sound is off initially. The 48-second visual guide is
-optional; there is no need to match the orb. STOP ALL ends guide and sound.
-RESET returns warm / silent / stopped settings and keeps your location/view.
+## Controls
 
-## Open the project
+| Action | Control |
+| --- | --- |
+| Start looking | Click inside the game, then move the mouse |
+| Select a labelled control | Aim the centre dot at it and left-click |
+| Move | WASD or the arrow keys |
+| Move faster | Hold Shift while moving |
+| Turn in steps | Q turns left; E turns right by 30 degrees when no nearby chair takes priority |
+| Sit at a nearby table chair | Press E or aim at the chair and click |
+| Sofa and nearby seating | F toggles nearby seating; sitting on the sofa starts the guide |
+| Stand | E or F while seated |
+| Stop music and guidance | Esc or STOP ALL; Esc also releases the pointer |
 
-Open this repository root in Unity 6000.4.0a2. Packages are restored from
-`Packages/manifest.json` and `packages-lock.json`; the Library cache is excluded.
+In the tested Unity Play embedded session, pointer-lock requests were rejected. When capture is unavailable, press **R** to pause turning, move the pointer back to the centre, then press **R** to resume. Alternatively, hold the right mouse button while recentering and release it to continue looking. Repeated sweeps allow a complete turn; Q/E are another turning option. The view does not rotate automatically when the pointer is stationary at an edge. Where pointer capture is permitted, relative mouse movement can continue turning normally.
 
-- `Assets/Scenes/QuietCorner_Chapter6_Simulation.unity`: no headset required.
-- `Assets/Scenes/QuietCorner_Chapter6_OpenXR.unity`: configured OpenXR scene;
-  physical headset use, stereo rendering and performance remain untested.
-- `Assets/Scenes/QuietCorner.unity`: retained earlier desktop scene, for provenance.
+Near a table chair, E prioritises sitting rather than turning. Movement is disabled while seated. Standing restores the saved standing position and view.
 
-Select the simulation scene for normal preview. The old desktop scene is not
-the A1 experience. Player input in the XR scenes comes through Input System
-simulated/real tracked devices and pose drivers.
+## Activities
+
+- **LIGHT** switches between warm and cool environments.
+- **MUSIC** enables or disables the matching music. Music starts off. Changing the light crossfades between the two tracks.
+- **START GUIDED BREAK** starts a 48-second sequence with spoken breathing cues, matching captions and an animated orb. The same control stops it. Sitting on the sofa also starts the guide; standing ends it.
+- **Table chairs** provide optional seating without starting the guide.
+- **Water and tea dispenser** offers WATER or TEA, shows preparation, and presents a cup to collect. Collect the current drink before selecting another.
+- **RESET** restores warm lighting with music and guide stopped while preserving location and view.
+
+The 25 November audio revision makes the existing light choice easier to hear: warm light uses low, rounded chords and a slow pluck; cool light uses higher open chords and clear bell notes. The generated tracks have matched average levels. Normal playback is approximately 7.9 dB higher in digital RMS level than the previous build. Music lowers during spoken guidance and returns gently afterward. This is a signal measurement, not a claim about sound pressure or perceived loudness on every device.
+
+## Open and build
+
+Open this repository root in **Unity 6000.4.0a2**. Dependencies are declared in `Packages/manifest.json` and `Packages/packages-lock.json`. Unity restores its Library cache; the cache is not committed.
+
+- `Assets/Scenes/QuietCorner_Chapter6_Simulation.unity` is the current desktop/browser simulation.
+- `Assets/Scenes/QuietCorner_Chapter6_OpenXR.unity` is the configured OpenXR scene. Physical-headset use and performance remain untested.
+- `Assets/Scenes/QuietCorner.unity` is an earlier retained scene, not the current experience.
+
+Current batchmode build entry points are `A1Setup.BuildMusicContrastWebGL` and `A1Setup.BuildMusicContrastWindows`. For example:
+
+```text
+Unity.exe -batchmode -quit -projectPath <repository> -executeMethod A1Setup.BuildMusicContrastWebGL -logFile <webgl-build-log>
+Unity.exe -batchmode -quit -projectPath <repository> -executeMethod A1Setup.BuildMusicContrastWindows -logFile <windows-build-log>
+```
+
+Outputs are written to a sibling directory, `MusicContrast_2026-11-25/WebGL` or `MusicContrast_2026-11-25/Windows`. For Unity Play, ZIP the WebGL folder contents so that `index.html` is at the archive root. Older build methods remain for local iteration history.
+
+The normal browser preview uses direct camera input. The native XR scene retains tracked/simulated device input and pose drivers. Verification modes are opt-in and disabled in ordinary play.
 
 ## EZPZ integration
 
-The MIT-licensed EZPZ Interaction Toolkit by Matt Cabanag is used through its
-original `InteractableGeneral`, `ScalePulse` and `GenUtils` runtime scripts.
-`GenUtils` has two unused editor/IDE imports removed for player compatibility.
-See the included upstream attribution and MIT licence in
-`Assets/EZPZ Interaction Toolkit/`.
+The project uses the MIT-licensed [EZPZ Interaction Toolkit](https://github.com/AVataRR626/EZPZ_Interaction_Toolkit) by Matt Cabanag. Included original runtime scripts are `InteractableGeneral`, `ScalePulse` and `GenUtils`; two unused editor/IDE imports were removed from `GenUtils` for player compatibility. Attribution and licence are in `Assets/EZPZ Interaction Toolkit/`.
 
-Selection follows: controller trigger -> Chapter6XRRay -> EZPZ primary event ->
-EZPZQuietCornerBridge -> QuietCornerController. The actual primary event also
-invokes the toolkit's scale pulse. This is a subset integration with the
-existing custom rig, not the EZPZ XR player prefab or a claim that tutorial
-exercises were completed.
+Selections use the toolkit's primary interaction event, which invokes `EZPZQuietCornerBridge` and the scene behaviour. Browser selections and tracked-controller selections share this event route. This is a subset integration with a custom rig, not the EZPZ XR player prefab.
 
 ## Verification and limitations
 
-`Evidence/Verification.txt`: 42 passing simulated-device integration assertions.
-`Evidence/WebGL_Browser_Test.txt`: browser loading and mouse-selection evidence.
-Screenshots show actual running scene frames. Windows and WebGL build summaries
-are included. These are technical checks, not human usability or efficacy tests.
+[Current technical evidence](Evidence/A2_Current/README.md) records the following:
 
-The visual guide, lighting and original procedural mono audio are independent
-choices. There are no scores, health claims or personal telemetry in the custom
-prototype code. The host can log ordinary requests. Text scaling, alternative
-input, non-visual navigation, physical room-boundary integration and teleport
-comfort fades remain unresolved. Hardware motion comfort is untested.
+- 25 November Windows and WebGL builds succeeded with zero build errors.
+- The Windows player passed 24 runtime smoke checks, including music level, bounded crossfade, voice ducking and recovery, immediate stop, subsequent-frame silence, captions and reset.
+- Actual clips exported by Unity had matched 0.11 RMS levels, peaks below 0.40 full scale and smooth loop boundaries.
+- 24 November input-adapter regression records contain 14 full-turn/recentering checks and 14 stationary-edge checks. These are automated adapter checks, not 28 participant trials.
+- The newly published Unity Play scene loaded. Online loading verification does not replace the Windows audio tests or independent listener feedback.
 
-## Honest work history
+To repeat the current runtime smoke checks, launch the Windows build with:
 
-The first commit imports the existing Chapter 6 source and explicitly states
-that prior work was recorded on the current date. Later commits record actual
-A1 changes. No timestamps are backdated, and this does not reconstruct a
-semester-long commit record. AI assistance supported implementation, technical
-checks, report drafting and demonstration editing. No classmate feedback or
-headset trial is fabricated.
+```text
+QuietCorner.exe -qc-verify -qc-output <evidence-folder>
+```
 
-## Reproduce builds and checks
+To export the actual generated clips from Unity, use `QuietCornerMusicVerification.Export` with `-qc-audio-output <output-folder>`. The resulting WAV files and CSV support signal inspection. No new build is claimed to have been tested by classmates merely because the technical checks pass.
 
-`A1Setup.PrepareAndBuildWindows` updates the two A1 XR scenes and builds a
-Windows simulation. `A1Setup.BuildWebGL` builds the browser preview. Run these
-as Unity batchmode execute methods; outputs are written beside the project.
+Physical-headset comfort, non-visual navigation, text scaling and alternative input remain unvalidated. The guide is optional, music starts silent, and STOP ALL/Esc stop music and guidance. The custom code does not intentionally submit personal telemetry; hosting and survey services have their own data practices.
 
-Launch the Windows player with `-chapter6-verify -chapter6-evidence <folder>`
-to run the integration assertions. Optional demonstration frame capture uses
-`-a1-demo -a1-demo-dir <folder>`. These recording modes are disabled in normal play.
+## History and evidence
 
-The static WebGL build in `docs/` is served by Pages. Build assets are compiled
-engine outputs, not imported high-resolution design assets.
+[CHANGELOG.md](CHANGELOG.md) summarises the recorded local iterations. Git commits use their actual creation dates; this update does not reconstruct or backdate a semester-long commit history. The older `Evidence/` files and `docs/` deployment refer to the historical A1 version unless explicitly labelled otherwise.
+
+AI assistance supported implementation, verification and report drafting. The procedural music is generated by the project code; English guide clips were generated locally with Microsoft Zira. No peer recordings or fabricated participant results were used. Questionnaire responses and class discussion screenshots are retained in the assessment report/evidence package, separately from this public source repository.
 
 ## References
 
-- EZPZ: https://github.com/AVataRR626/EZPZ_Interaction_Toolkit
-- W3C XR Accessibility User Requirements: https://www.w3.org/TR/xaur/
-- Slater (2009), place illusion: https://doi.org/10.1098/rstb.2009.0138
-- Headspace product precedent: https://www.headspace.com/meditation
-
-The separately supplied assessment report explains design reasoning and ethics.
-The 2:30 demonstration contains actual simulated-device runtime frames;
-explanatory captions and synchronized original procedural audio were edited
-after capture. It does not depict a physical headset session.
+- Cabanag, M. [EZPZ Interaction Toolkit](https://github.com/AVataRR626/EZPZ_Interaction_Toolkit), MIT licence.
+- W3C. [XR Accessibility User Requirements](https://www.w3.org/TR/xaur/).
+- Slater, M. (2009). [Place illusion and plausibility can lead to realistic behaviour in immersive virtual environments](https://doi.org/10.1098/rstb.2009.0138).

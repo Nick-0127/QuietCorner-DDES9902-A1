@@ -50,16 +50,28 @@ public class Chapter6XRPlayer : MonoBehaviour
         var keyboard = Keyboard.current;
         if (IsSimulation && keyboard != null && !simulator.automated)
         {
-            direction += new Vector2((keyboard.dKey.isPressed ? 1 : 0) - (keyboard.aKey.isPressed ? 1 : 0),
-                (keyboard.wKey.isPressed ? 1 : 0) - (keyboard.sKey.isPressed ? 1 : 0));
+            direction += new Vector2(
+                ((keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed) ? 1 : 0)
+                    - ((keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed) ? 1 : 0),
+                ((keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed) ? 1 : 0)
+                    - ((keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed) ? 1 : 0));
             if (keyboard.qKey.wasPressedThisFrame) SnapTurn(-30);
-            if (keyboard.eKey.wasPressedThisFrame) SnapTurn(30);
-            if (keyboard.escapeKey.wasPressedThisFrame) { experience.StopExperience(); Cursor.lockState = CursorLockMode.None; }
+            if (keyboard.eKey.wasPressedThisFrame && (experience == null || !experience.TryToggleChairSeat())) SnapTurn(30);
+            if (keyboard.fKey.wasPressedThisFrame && experience != null) experience.ToggleNearbySeat();
+            if (keyboard.escapeKey.wasPressedThisFrame)
+            {
+                experience?.StopExperience();
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
+        if (experience != null && experience.seated) direction = Vector2.zero;
         direction = Vector2.ClampMagnitude(direction, 1);
         Vector3 forward = Vector3.ProjectOnPlane(head.transform.forward, Vector3.up).normalized;
         Vector3 right = Vector3.Cross(Vector3.up, forward);
-        body.Move(((forward * direction.y + right * direction.x) * 1.6f + Vector3.down * 2) * Time.deltaTime);
+        bool sprinting = IsSimulation && keyboard != null && (keyboard.leftShiftKey.isPressed || keyboard.rightShiftKey.isPressed);
+        float speed = experience != null ? experience.MovementSpeed(sprinting) : 1.6f;
+        if (experience == null || !experience.seated)
+            body.Move(((forward * direction.y + right * direction.x) * speed + Vector3.down * 2) * Time.deltaTime);
         var axis = turn.ReadValue<Vector2>().x;
         if (Mathf.Abs(axis) > .7f && !turnHeld) { SnapTurn(Mathf.Sign(axis) * 30); turnHeld = true; }
         if (Mathf.Abs(axis) < .3f) turnHeld = false;

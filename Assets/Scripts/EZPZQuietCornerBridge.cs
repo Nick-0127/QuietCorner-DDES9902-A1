@@ -40,6 +40,6 @@ public sealed class EZPZQuietCornerBridge : MonoBehaviour
     {
         activationCount++;
         var controller = FindFirstObjectByType<QuietCornerController>();
-        if (controller != null) controller.Activate(target.action, target.destination);
+        if (controller != null) controller.Activate(target.action, target.destination, target);
     }
 }

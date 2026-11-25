@@ -1,0 +1,24 @@
+PASS: Safe initial state: warm, silent, guide stopped
+PASS: Spoken breathing cues are loaded for the captioned guide
+PASS: Physical lighting button is reachable by pointer ray
+PASS: Warm lighting selects its own music loop
+PASS: Lighting crossfade never exceeds the music gain limit
+PASS: Cool lighting fades to its matching music loop
+PASS: Music reaches the increased listening level
+PASS: Guided break speaks and captions its breathing cue
+PASS: Music ducks beneath spoken guidance
+PASS: Pause guide animates orb and advances time
+PASS: Pause control cancels active guide
+PASS: Music returns smoothly after voice guidance stops
+PASS: Guide completes after six cycles
+PASS: Stop immediately silences music and voice guidance
+PASS: Stop clears the music envelope on subsequent frames
+PASS: Floor destination moves the player
+PASS: Character controller can move through the room
+PASS: View can freely rotate
+PASS: Sofa interaction retains the seated height and starts a guided break
+PASS: Seated view faces the guided breathing orb
+PASS: Breathing subtitles remain visible while seated
+PASS: Leaving the sofa ends the guided break and restores the standing pose
+PASS: Reset restores neutral interaction state
+PASS: No runtime errors during automated smoke check

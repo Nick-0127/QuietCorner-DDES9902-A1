@@ -1,0 +1,15 @@
+PASS: 1000x600: right movement reaches behind without capture
+PASS: 1000x600: left movement reaches behind without capture
+PASS: 600x900: right movement reaches behind without capture
+PASS: 600x900: left movement reaches behind without capture
+PASS: 1920x1080: right movement reaches behind without capture
+PASS: 1920x1080: left movement reaches behind without capture
+PASS: RMB reposition preserves direction and allows repeated full turns
+PASS: Denied pointer lock still allows a complete 360-degree sweep with RMB recenter
+PASS: R toggles no-turn recenter mode and preserves a full camera turn
+PASS: Next click retries capture after initial refusal
+PASS: Click release retries capture if mousedown did not acquire it
+PASS: Captured relative motion turns continuously through more than 360 degrees
+PASS: Capture acquired during reposition clears the reposition state
+PASS: Escape and blur release reposition state
+14/14 checks passed
